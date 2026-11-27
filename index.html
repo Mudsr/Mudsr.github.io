@@ -140,12 +140,12 @@
   .step h3 { font-size: 16px; margin: 6px 0 6px; }
   .step p { font-size: 14.5px; color: var(--muted); }
 
-  .track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .co-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
   .co-card b { display: block; font-size: 15px; }
   .co-card span { display: block; font-size: 13px; color: var(--muted); }
 
-  .stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .stack h3 { font-size: 15px; }
 
   .contact {
@@ -196,15 +196,15 @@
     <div>
       <div class="eyebrow"><span class="dot"></span>Senior Backend, Cloud and AI Engineer · taking new projects</div>
       <h1>Cloud-native backends, infrastructure and <span>AI features</span> that ship and stay up.</h1>
-      <p class="lead">For startups and product teams that need it done right the first time. You get production-ready APIs, cloud setups defined in Terraform, and AI features wired into your real product, with tests, monitoring and docs your team can own.</p>
+      <p class="lead">For startups and product teams that need it done right the first time. You get production-ready APIs in NestJS or .NET, cloud setups defined in Terraform and Ansible, and Python AI features wired into your real product, with tests, monitoring and docs your team can own.</p>
       <div class="cta">
         <a class="btn primary" href="#contact">Start a project</a>
         <a class="btn" href="#work">See case studies</a>
       </div>
       <div class="stats">
         <div class="stat"><b>6+ years</b><span>in production systems</span></div>
-        <div class="stat"><b>10+ products</b><span>SaaS, ERP, IoT, AdTech</span></div>
-        <div class="stat"><b>US and EU clients</b><span>remote, with daily overlap</span></div>
+        <div class="stat"><b>20+ products</b><span>IoT, fintech, ERP, AI, SaaS</span></div>
+        <div class="stat"><b>Team lead</b><span>of 4 engineers; US, EU and Africa clients</span></div>
       </div>
     </div>
     <img class="avatar" src="avatar.jpg" alt="Mudassar Ali" width="240" height="240">
@@ -223,7 +223,7 @@
         <h3>Cloud-native backends and APIs</h3>
         <p class="pitch">A backend that handles real traffic, real payments and real integrations without surprises.</p>
         <ul>
-          <li>REST and GraphQL APIs in NestJS, FastAPI or Laravel</li>
+          <li>REST and GraphQL APIs in NestJS, .NET or Laravel</li>
           <li>Queues, workers and event-driven services that scale out</li>
           <li>Stripe, Paddle, Shopify, CRM and third-party integrations</li>
           <li>Multi-tenant SaaS architecture and data modelling</li>
@@ -237,8 +237,8 @@
         <h3>Cloud infrastructure and DevOps</h3>
         <p class="pitch">Infrastructure you can rebuild from code, deploy in minutes and stop worrying about.</p>
         <ul>
-          <li>AWS and GCP setups written in Terraform</li>
-          <li>Docker, Kubernetes, ECS and serverless deployments</li>
+          <li>AWS, GCP and Azure setups written in Terraform</li>
+          <li>Kubernetes, Helm, ECS, or Ansible-managed servers on Hetzner</li>
           <li>CI/CD pipelines in GitHub Actions or GitLab CI</li>
           <li>Security hardening, secrets and least-privilege access</li>
           <li>Monitoring, alerting and cloud cost clean-up</li>
@@ -251,7 +251,7 @@
         <h3>AI features in your product</h3>
         <p class="pitch">LLM features connected to your data and your users, built to run in production, not just in a demo.</p>
         <ul>
-          <li>RAG search and chat over your documents and data</li>
+          <li>Python and FastAPI AI services, RAG search and chat over your data</li>
           <li>AI assistants and support bots inside your app</li>
           <li>Agents and automations that call your APIs and tools</li>
           <li>OpenAI, Claude and open-model integrations, MCP servers</li>
@@ -268,23 +268,78 @@
   <div class="wrap">
     <h2>Case studies</h2>
     <p class="section-title">Problems I have solved</p>
-    <p class="section-sub">A selection from client work and my own projects. Most client code is private; I am happy to walk through details on a call.</p>
+    <p class="section-sub">A selection from client and product work. Most client code is private; I am happy to walk through details on a call.</p>
     <div class="cases">
 
       <article class="card case">
-        <div class="top"><h3>Scivenia</h3><span class="kind">Backend · Cloud</span></div>
+        <div class="top"><h3>Plodyo</h3><span class="kind">AI · Backend</span></div>
         <dl>
-          <dt>Client</dt><dd>EdTech SaaS for scientific events, workshops and webinars</dd>
-          <dt>Need</dt><dd>One engineer to own the product: new modules, real-time features and the AWS platform</dd>
-          <dt>Built</dt><dd>Led architecture and delivery; GraphQL APIs, Socket.IO live engagement, payments; AWS ECS, RDS, S3 with GitLab CI/CD</dd>
-          <dt>Outcome</dt><dd>Platform runs large interactive events end to end, from registration to live sessions</dd>
+          <dt>Client</dt><dd>AI learning platform that creates stories and lessons for children</dd>
+          <dt>Need</dt><dd>Turn an MVP into a product that generates safe, age-appropriate content reliably, and launch a B2B offer for hotels</dd>
+          <dt>Built</dt><dd>Sole backend engineer. End-to-end LLM pipeline: age-based prompt templates, structured JSON output, OpenAI and Claude with automatic fallback, ElevenLabs narration, Trigger.dev jobs for long generations; revamped the database layer</dd>
+          <dt>Outcome</dt><dd>Generation keeps working when one model provider fails; hotel product shipped with 45 of 48 endpoints live</dd>
         </dl>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Next.js</span><span class="tag">GraphQL</span><span class="tag">AWS ECS</span></div>
+        <div class="tags"><span class="tag">NestJS</span><span class="tag">Claude API</span><span class="tag">OpenAI</span><span class="tag">ElevenLabs</span><span class="tag">Trigger.dev</span><span class="tag">Supabase</span></div>
+      </article>
+
+      <article class="card case">
+        <div class="top"><h3>GemOne IoT platform</h3><span class="kind">Cloud · Platform</span></div>
+        <dl>
+          <dt>Client</dt><dd>IoT telematics for lifting and access equipment, 50+ microservices on GCP and AWS</dd>
+          <dt>Need</dt><dd>Less manual platform work, safer deployments and a path off the legacy AWS estate</dd>
+          <dt>Built</dt><dd>Bitbucket-as-code in CDKTF with keyless CI/CD to GCP across 300+ repositories; moved 20+ services to a standard Kubernetes and Helm flow; versioned IAM templates in Terraform; AWS RDS to BigQuery pipeline; fixed a Pub/Sub batching bug</dd>
+          <dt>Outcome</dt><dd>Repo setup and permissions defined in code instead of by hand; downstream message volume cut by 30 to 40%</dd>
+        </dl>
+        <div class="tags"><span class="tag">Terraform</span><span class="tag">CDKTF</span><span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">GCP</span><span class="tag">AWS</span></div>
+      </article>
+
+      <article class="card case">
+        <div class="top"><h3>PG Group platform operations</h3><span class="kind">Infra · DevOps</span></div>
+        <dl>
+          <dt>Client</dt><dd>Group running payments, e-government and public-sector platforms</dd>
+          <dt>Need</dt><dd>Repeatable servers, safe deployments and production go-lives across many apps on self-hosted infrastructure</dd>
+          <dt>Built</dt><dd>Server provisioning and configuration with Ansible on Hetzner and Contabo; Docker Compose stacks; CI/CD with GitHub Actions and GHCR; OpenBao secrets; Cloudflare tunnels; Prometheus and Grafana monitoring</dd>
+          <dt>Outcome</dt><dd>Led production go-lives and migrations, including a database cutover gated on row counts, with health checks and clean rollback</dd>
+        </dl>
+        <div class="tags"><span class="tag">Ansible</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">OpenBao</span><span class="tag">Grafana</span><span class="tag">Hetzner</span></div>
+      </article>
+
+      <article class="card case">
+        <div class="top"><h3>Payments and wallet platform</h3><span class="kind">Backend · Fintech</span></div>
+        <dl>
+          <dt>Client</dt><dd>Multi-country digital payments, wallets and NFC cards</dd>
+          <dt>Need</dt><dd>A fragmented codebase built in parallel had to become one stable platform before launch</dd>
+          <dt>Built</dt><dd>Consolidated it into one NestJS platform (about 80 modules, 250+ data models); wallet top-up, balances and transactions APIs; ran k6 load tests on a production-like environment</dd>
+          <dt>Outcome</dt><dd>One platform to ship and secure; load tests pinpointed the throughput bottlenecks (row locking, N+1 queries) with fixes</dd>
+        </dl>
+        <div class="tags"><span class="tag">NestJS</span><span class="tag">Prisma</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">k6</span></div>
+      </article>
+
+      <article class="card case">
+        <div class="top"><h3>Sarens ERP</h3><span class="kind">.NET · Event sourcing</span></div>
+        <dl>
+          <dt>Client</dt><dd>International heavy-lift company</dd>
+          <dt>Need</dt><dd>Time and expense registration with full history and audit for field operations</dd>
+          <dt>Built</dt><dd>Time-registrations microservice on .NET Aspire with Marten event sourcing and projections; expense and signature features; deployed to Kubernetes via Azure DevOps</dd>
+          <dt>Outcome</dt><dd>Every change versioned and auditable; about 450 commits reviewed and approved by the client's senior developer</dd>
+        </dl>
+        <div class="tags"><span class="tag">.NET 8</span><span class="tag">.NET Aspire</span><span class="tag">Marten</span><span class="tag">PostgreSQL</span><span class="tag">Azure DevOps</span></div>
+      </article>
+
+      <article class="card case">
+        <div class="top"><h3>Scivenia</h3><span class="kind">Tech lead · SaaS</span></div>
+        <dl>
+          <dt>Client</dt><dd>SaaS for scientific events, workshops and webinars</dd>
+          <dt>Need</dt><dd>Someone to lead the team, modernise an ageing frontend and own the AWS platform</dd>
+          <dt>Built</dt><dd>Lead the team and the delivery flow; migrated Next.js 12 to 16 and React 17 to 19 with 531 unit and 206 end-to-end tests; event wizard, Stripe payments, 11 locales; own AWS ECS, RDS and security</dd>
+          <dt>Outcome</dt><dd>Modern, well-tested codebase and a predictable delivery flow for a shared team</dd>
+        </dl>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">GraphQL</span><span class="tag">Laravel</span><span class="tag">AWS ECS</span></div>
         <div class="links"><a href="https://scivenia.com" target="_blank" rel="noopener">Live site</a></div>
       </article>
 
       <article class="card case">
-        <div class="top"><h3>Distributed video pipeline</h3><span class="kind">Backend · Cloud-native</span></div>
+        <div class="top"><h3>Distributed video pipeline</h3><span class="kind">Cloud-native · Open source</span></div>
         <dl>
           <dt>Need</dt><dd>Video compilation was tied to one server, so a busy server blocked every request</dd>
           <dt>Built</dt><dd>NestJS API takes frames, RabbitMQ distributes jobs, Python FFmpeg workers compile in parallel, MinIO stores output</dd>
@@ -295,71 +350,15 @@
       </article>
 
       <article class="card case">
-        <div class="top"><h3>Proximus data sync</h3><span class="kind">Data · GCP</span></div>
+        <div class="top"><h3>Adilo</h3><span class="kind">SaaS · Performance</span></div>
         <dl>
-          <dt>Client</dt><dd>Telecom operator's SIM activity reporting</dd>
-          <dt>Need</dt><dd>Move SIM card activity from telecom systems into cloud dashboards reliably</dd>
-          <dt>Built</dt><dd>Python transformation jobs and scheduled sync with replay on GCP, BigQuery and Bigtable, running on Kubernetes</dd>
-          <dt>Outcome</dt><dd>Reports fed automatically, with replay to recover from upstream gaps</dd>
+          <dt>Client</dt><dd>US video hosting SaaS with 8,000+ users</dd>
+          <dt>Need</dt><dd>Faster APIs, new subscription billing and stability under heavy load</dd>
+          <dt>Built</dt><dd>Rebuilt subscription modules with FastSpring and Paddle, usage metering, query optimisation and refactoring of core code paths</dd>
+          <dt>Outcome</dt><dd>Average API response time cut by 40%</dd>
         </dl>
-        <div class="tags"><span class="tag">Python</span><span class="tag">BigQuery</span><span class="tag">Kubernetes</span></div>
-      </article>
-
-      <article class="card case">
-        <div class="top"><h3>Multi-agent assistant</h3><span class="kind">AI · Agents</span></div>
-        <dl>
-          <dt>Need</dt><dd>Explore how several specialised LLM agents can split and solve one request</dd>
-          <dt>Built</dt><dd>LangGraph graph where agents run in parallel and pass results to each other</dd>
-          <dt>Outcome</dt><dd>Working pattern I reuse for agent and automation features in client products</dd>
-        </dl>
-        <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LLM</span></div>
-        <div class="links"><a href="https://github.com/Mudsr/testbot-with-langgraph" target="_blank" rel="noopener">Code</a></div>
-      </article>
-
-      <article class="card case">
-        <div class="top"><h3>Gem Monitor</h3><span class="kind">IoT · Backend</span></div>
-        <dl>
-          <dt>Client</dt><dd>IoT platform monitoring industrial assets and vehicles</dd>
-          <dt>Need</dt><dd>Keep telemetry ingestion reliable and fix real-time processing bugs</dd>
-          <dt>Built</dt><dd>Maintained and extended the .NET Core ingestion service; fixed processing and database reliability issues</dd>
-          <dt>Outcome</dt><dd>Steadier data flow into the dashboards and alerts customers rely on</dd>
-        </dl>
-        <div class="tags"><span class="tag">.NET Core</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span></div>
-      </article>
-
-      <article class="card case">
-        <div class="top"><h3>StageOne CMS</h3><span class="kind">SaaS · Cloud</span></div>
-        <dl>
-          <dt>Client</dt><dd>Swedish startup serving opera houses and artists</dd>
-          <dt>Need</dt><dd>A content platform for artists and venues, built from scratch</dd>
-          <dt>Built</dt><dd>Architected the platform; caching, queues and scheduled jobs; tuned APIs under load; AWS EC2, RDS, S3 with automated deploys</dd>
-          <dt>Outcome</dt><dd>Served 300+ artists</dd>
-        </dl>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">AWS</span></div>
-      </article>
-
-      <article class="card case">
-        <div class="top"><h3>Adilo</h3><span class="kind">SaaS · Payments</span></div>
-        <dl>
-          <dt>Client</dt><dd>US video hosting SaaS</dd>
-          <dt>Need</dt><dd>Scale the product, add billing and stop outages</dd>
-          <dt>Built</dt><dd>Refactored the core codebase, integrated Paddle and FastSpring billing with usage tracking, debugged outages, tuned AWS</dd>
-          <dt>Outcome</dt><dd>Platform serving 8,000+ users with metered billing</dd>
-        </dl>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">AWS</span></div>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Redis</span><span class="tag">AWS ECS</span></div>
         <div class="links"><a href="https://adilo.bigcommand.com" target="_blank" rel="noopener">Live site</a></div>
-      </article>
-
-      <article class="card case">
-        <div class="top"><h3>CoolerAds</h3><span class="kind">Multi-tenant SaaS</span></div>
-        <dl>
-          <dt>Client</dt><dd>Ad platform for US local newspapers</dd>
-          <dt>Need</dt><dd>One white-label product that each newspaper runs under its own brand</dd>
-          <dt>Built</dt><dd>Led the multi-tenant architecture, campaign scheduling, Twilio messaging and social posting</dd>
-          <dt>Outcome</dt><dd>Newspapers sell and run digital ad campaigns on their own branded portals</dd>
-        </dl>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div>
-        <div class="links"><a href="https://mypaperonline.coolerads.com" target="_blank" rel="noopener">Demo</a></div>
       </article>
 
     </div>
@@ -384,9 +383,10 @@
   <div class="wrap">
     <h2>Track record</h2>
     <p class="section-title">Teams I have built with</p>
-    <p class="section-sub">Product companies and agencies across the US and Europe.</p>
+    <p class="section-sub">Product companies and agencies across the US, Europe and Africa.</p>
     <div class="track">
-      <div class="co-card"><b>TechVenia</b><span>Senior Software Engineer</span><span>2023 to now</span></div>
+      <div class="co-card"><b>TechVenia</b><span>Senior Software Engineer · Belgium</span><span>2023 to now</span></div>
+      <div class="co-card"><b>PG Group</b><span>Backend and Cloud Engineer</span><span>2025 to now</span></div>
       <div class="co-card"><b>Knops Media</b><span>Full-Stack Engineer · Belgium</span><span>2022 to 2023</span></div>
       <div class="co-card"><b>StageOne AB</b><span>Full-Stack Engineer · Sweden</span><span>2022</span></div>
       <div class="co-card"><b>Adilo</b><span>Software Engineer · US</span><span>2021 to 2022</span></div>
@@ -400,9 +400,10 @@
     <h2>Stack</h2>
     <p class="section-title">Tools I ship with</p>
     <div class="stack" style="margin-top:24px">
-      <div class="card"><h3>Backend</h3><div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Laravel</span><span class="tag">.NET</span><span class="tag">GraphQL</span></div></div>
-      <div class="card"><h3>Cloud and DevOps</h3><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span></div></div>
-      <div class="card"><h3>AI and data</h3><div class="tags"><span class="tag">OpenAI</span><span class="tag">Claude</span><span class="tag">RAG</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">BigQuery</span><span class="tag">RabbitMQ</span></div></div>
+      <div class="card"><h3>Backend</h3><div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">C#</span><span class="tag">.NET 8</span><span class="tag">ASP.NET Core</span><span class="tag">Laravel</span><span class="tag">GraphQL</span><span class="tag">Prisma</span><span class="tag">EF Core</span></div></div>
+      <div class="card"><h3>Cloud and DevOps</h3><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">CDKTF</span><span class="tag">Ansible</span><span class="tag">Kubernetes</span><span class="tag">Helm</span><span class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">Hetzner</span></div></div>
+      <div class="card"><h3>AI, RAG and agents</h3><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Claude API</span><span class="tag">OpenAI</span><span class="tag">RAG</span><span class="tag">LangGraph</span><span class="tag">AI agents</span><span class="tag">MCP</span><span class="tag">ElevenLabs</span><span class="tag">Trigger.dev</span></div></div>
+      <div class="card"><h3>Data and messaging</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">PostGIS</span><span class="tag">Redis</span><span class="tag">MongoDB</span><span class="tag">BigQuery</span><span class="tag">Pub/Sub</span><span class="tag">RabbitMQ</span><span class="tag">BullMQ</span></div></div>
     </div>
   </div>
 </section>
