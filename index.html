@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mudassar Ali | Senior Full-Stack and AI Engineer</title>
-<meta name="description" content="Mudassar Ali, senior full-stack and AI engineer. TypeScript, Node.js/NestJS, Next.js, Python/FastAPI, LLM and RAG systems, AWS, GCP and Terraform.">
-<meta property="og:title" content="Mudassar Ali | Senior Full-Stack and AI Engineer">
-<meta property="og:description" content="Backends, cloud platforms and LLM features that hold up in production.">
+<title>Mudassar Ali | Backend, Cloud and AI Engineer</title>
+<meta name="description" content="Senior backend, cloud and AI engineer for startups and product teams. Cloud-native APIs, AWS and GCP infrastructure with Terraform, and AI features like RAG, assistants and agents, built for production.">
+<meta property="og:title" content="Mudassar Ali | Backend, Cloud and AI Engineer">
+<meta property="og:description" content="Cloud-native backends, infrastructure and AI features that ship and stay up.">
 <meta property="og:image" content="avatar.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f766e'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>MA</text></svg>">
@@ -23,6 +23,7 @@
     --accent: #0f766e;
     --accent-soft: #e6f4f2;
     --chip: #f1f4f8;
+    --on-accent: #ffffff;
     --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 8px 24px rgba(15, 23, 42, .06);
   }
   @media (prefers-color-scheme: dark) {
@@ -35,6 +36,7 @@
       --accent: #2dd4bf;
       --accent-soft: #0f2f33;
       --chip: #17223a;
+      --on-accent: #062a27;
       --shadow: none;
     }
   }
@@ -49,7 +51,7 @@
   }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
   nav {
     position: sticky; top: 0; z-index: 10;
@@ -57,11 +59,13 @@
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
   .brand { font-weight: 700; color: var(--text); letter-spacing: -.01em; }
-  nav ul { display: flex; gap: 22px; list-style: none; font-size: 14px; font-weight: 500; }
+  nav ul { display: flex; gap: 22px; list-style: none; font-size: 14px; font-weight: 500; align-items: center; }
   nav ul a { color: var(--muted); }
   nav ul a:hover { color: var(--text); text-decoration: none; }
+  .nav-cta { padding: 7px 14px; border-radius: 8px; background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 14px; }
+  .nav-cta:hover { text-decoration: none; opacity: .92; }
 
   header.hero { padding: 72px 0 56px; }
   .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
@@ -71,76 +75,104 @@
     background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; margin-bottom: 20px;
   }
   .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-  h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
+  h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.1; letter-spacing: -.03em; font-weight: 800; }
   h1 span { color: var(--accent); }
-  .lead { font-size: 18px; color: var(--muted); max-width: 600px; margin-top: 18px; }
+  .lead { font-size: 18px; color: var(--muted); max-width: 620px; margin-top: 18px; }
   .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
   .btn {
     display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600; font-size: 15px;
     border: 1px solid var(--line); color: var(--text); background: var(--surface);
   }
   .btn:hover { text-decoration: none; border-color: var(--accent); }
-  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  @media (prefers-color-scheme: dark) { .btn.primary { color: #062a27; } }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
   .avatar {
     width: 240px; height: 240px; border-radius: 24px; object-fit: cover;
     border: 1px solid var(--line); box-shadow: var(--shadow);
   }
   .stats { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 40px; }
-  .stat b { display: block; font-size: 26px; letter-spacing: -.02em; }
+  .stat b { display: block; font-size: 24px; letter-spacing: -.02em; }
   .stat span { font-size: 13px; color: var(--muted); }
 
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section { padding: 60px 0; border-top: 1px solid var(--line); }
   h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 8px; }
-  .section-title { font-size: 28px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 28px; }
+  .section-title { font-size: 28px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 10px; }
+  .section-sub { color: var(--muted); max-width: 640px; margin-bottom: 30px; }
 
-  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
   .card {
     background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
-    padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+    padding: 24px; box-shadow: var(--shadow); display: flex; flex-direction: column;
   }
-  .card h3 { font-size: 18px; letter-spacing: -.01em; }
-  .card .kind { font-size: 13px; color: var(--muted); margin: 2px 0 10px; }
-  .card p { font-size: 15px; color: var(--muted); }
-  .card ul { margin: 10px 0 0 18px; font-size: 14.5px; color: var(--muted); }
-  .card ul li { margin-bottom: 4px; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .service .num {
+    width: 36px; height: 36px; border-radius: 10px; background: var(--accent-soft); color: var(--accent);
+    display: grid; place-items: center; font-weight: 700; margin-bottom: 14px;
+  }
+  .service h3 { font-size: 19px; letter-spacing: -.01em; }
+  .service .pitch { color: var(--muted); font-size: 15px; margin: 6px 0 12px; }
+  .service ul { list-style: none; font-size: 14.5px; }
+  .service ul li { padding: 6px 0 6px 22px; position: relative; border-top: 1px solid var(--line); }
+  .service ul li::before {
+    content: ""; position: absolute; left: 2px; top: 13px; width: 10px; height: 6px;
+    border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg);
+  }
+  .service .good { margin-top: auto; padding-top: 14px; font-size: 13.5px; color: var(--muted); }
+  .service .good b { color: var(--text); }
+
+  .cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .case .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .case h3 { font-size: 18px; letter-spacing: -.01em; }
+  .case .kind { font-size: 12.5px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+  .case dl { margin-top: 12px; display: grid; grid-template-columns: 78px 1fr; gap: 6px 12px; font-size: 14.5px; }
+  .case dt { color: var(--muted); font-weight: 600; }
+  .case dd { color: var(--text); }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
   .tag {
     font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
     background: var(--chip); color: var(--text); padding: 3px 8px; border-radius: 6px;
   }
-  .card .links { margin-top: auto; padding-top: 14px; font-size: 14px; font-weight: 600; display: flex; gap: 16px; }
+  .case .links { margin-top: auto; padding-top: 14px; font-size: 14px; font-weight: 600; display: flex; gap: 16px; }
 
-  .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
-  .skill h3 { font-size: 15px; margin-bottom: 10px; }
-
-  .timeline { display: grid; gap: 14px; }
-  .job {
-    display: grid; grid-template-columns: 190px 1fr; gap: 24px;
-    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; box-shadow: var(--shadow);
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+  .step { counter-increment: step; }
+  .step::before {
+    content: "0" counter(step); font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); font-weight: 500;
   }
-  .job .when { font-size: 14px; color: var(--muted); }
-  .job .where { font-size: 13px; color: var(--muted); }
-  .job h3 { font-size: 17px; }
-  .job .co { color: var(--accent); font-weight: 600; font-size: 15px; }
-  .job ul { margin: 10px 0 0 18px; color: var(--muted); font-size: 15px; }
-  .job ul li { margin-bottom: 4px; }
+  .step h3 { font-size: 16px; margin: 6px 0 6px; }
+  .step p { font-size: 14.5px; color: var(--muted); }
+
+  .track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .co-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .co-card b { display: block; font-size: 15px; }
+  .co-card span { display: block; font-size: 13px; color: var(--muted); }
+
+  .stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .stack h3 { font-size: 15px; }
 
   .contact {
     background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 36px;
     display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; box-shadow: var(--shadow);
   }
-  .contact h3 { font-size: 24px; letter-spacing: -.02em; }
-  .contact p { color: var(--muted); margin-top: 6px; max-width: 520px; }
+  .contact h3 { font-size: 26px; letter-spacing: -.02em; }
+  .contact p { color: var(--muted); margin-top: 8px; max-width: 540px; }
+  .contact ol { color: var(--muted); margin: 10px 0 0 20px; font-size: 15px; }
 
   footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; text-align: center; }
 
-  @media (max-width: 760px) {
-    nav ul { display: none; }
-    header.hero { padding: 40px 0 32px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 28px; }
-    .avatar { width: 140px; height: 140px; border-radius: 18px; order: -1; }
-    .job { grid-template-columns: 1fr; gap: 6px; }
+  @media (max-width: 900px) {
+    .services, .steps { grid-template-columns: 1fr 1fr; }
+    .cases { grid-template-columns: 1fr; }
+    .track { grid-template-columns: repeat(3, 1fr); }
+    .stack { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    nav ul li:not(:last-child) { display: none; }
+    header.hero { padding: 36px 0 28px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+    .avatar { width: 128px; height: 128px; border-radius: 18px; order: -1; }
+    .services, .steps, .stack { grid-template-columns: 1fr; }
+    .track { grid-template-columns: 1fr 1fr; }
+    .case dl { grid-template-columns: 1fr; gap: 2px; }
+    .case dd { margin-bottom: 8px; }
     .contact { padding: 24px; }
   }
 </style>
@@ -151,10 +183,10 @@
   <div class="wrap">
     <a class="brand" href="#">Mudassar Ali</a>
     <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Case studies</a></li>
+      <li><a href="#process">How I work</a></li>
+      <li><a class="nav-cta" href="#contact">Start a project</a></li>
     </ul>
   </div>
 </nav>
@@ -162,219 +194,215 @@
 <header class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow"><span class="dot"></span>Open to remote roles and contracts</div>
-      <h1>Senior Full-Stack and <span>AI Engineer</span></h1>
-      <p class="lead">I build backends, cloud platforms and LLM features that hold up in production. TypeScript and Node.js/NestJS, Next.js, Python/FastAPI, RAG and agents, on AWS and GCP with Terraform.</p>
+      <div class="eyebrow"><span class="dot"></span>Senior Backend, Cloud and AI Engineer · taking new projects</div>
+      <h1>Cloud-native backends, infrastructure and <span>AI features</span> that ship and stay up.</h1>
+      <p class="lead">For startups and product teams that need it done right the first time. You get production-ready APIs, cloud setups defined in Terraform, and AI features wired into your real product, with tests, monitoring and docs your team can own.</p>
       <div class="cta">
-        <a class="btn primary" href="#contact">Get in touch</a>
-        <a class="btn" href="#work">See my work</a>
-        <a class="btn" href="https://github.com/Mudsr" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn primary" href="#contact">Start a project</a>
+        <a class="btn" href="#work">See case studies</a>
       </div>
       <div class="stats">
-        <div class="stat"><b>6+ years</b><span>shipping production software</span></div>
-        <div class="stat"><b>10+</b><span>SaaS, ERP, IoT and AI products</span></div>
-        <div class="stat"><b>Lahore, PK</b><span>remote, flexible overlap with EU and US</span></div>
+        <div class="stat"><b>6+ years</b><span>in production systems</span></div>
+        <div class="stat"><b>10+ products</b><span>SaaS, ERP, IoT, AdTech</span></div>
+        <div class="stat"><b>US and EU clients</b><span>remote, with daily overlap</span></div>
       </div>
     </div>
     <img class="avatar" src="avatar.jpg" alt="Mudassar Ali" width="240" height="240">
   </div>
 </header>
 
+<section id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="section-title">What I can take off your plate</p>
+    <p class="section-sub">Three things I do end to end. Pick one, or combine them when your product needs all three.</p>
+    <div class="services">
+
+      <article class="card service">
+        <div class="num">1</div>
+        <h3>Cloud-native backends and APIs</h3>
+        <p class="pitch">A backend that handles real traffic, real payments and real integrations without surprises.</p>
+        <ul>
+          <li>REST and GraphQL APIs in NestJS, FastAPI or Laravel</li>
+          <li>Queues, workers and event-driven services that scale out</li>
+          <li>Stripe, Paddle, Shopify, CRM and third-party integrations</li>
+          <li>Multi-tenant SaaS architecture and data modelling</li>
+          <li>Rescuing slow or fragile legacy code</li>
+        </ul>
+        <p class="good"><b>Good fit if:</b> you are launching, scaling past the MVP, or your current backend keeps breaking.</p>
+      </article>
+
+      <article class="card service">
+        <div class="num">2</div>
+        <h3>Cloud infrastructure and DevOps</h3>
+        <p class="pitch">Infrastructure you can rebuild from code, deploy in minutes and stop worrying about.</p>
+        <ul>
+          <li>AWS and GCP setups written in Terraform</li>
+          <li>Docker, Kubernetes, ECS and serverless deployments</li>
+          <li>CI/CD pipelines in GitHub Actions or GitLab CI</li>
+          <li>Security hardening, secrets and least-privilege access</li>
+          <li>Monitoring, alerting and cloud cost clean-up</li>
+        </ul>
+        <p class="good"><b>Good fit if:</b> deploys are manual, nobody knows how prod was set up, or the cloud bill keeps growing.</p>
+      </article>
+
+      <article class="card service">
+        <div class="num">3</div>
+        <h3>AI features in your product</h3>
+        <p class="pitch">LLM features connected to your data and your users, built to run in production, not just in a demo.</p>
+        <ul>
+          <li>RAG search and chat over your documents and data</li>
+          <li>AI assistants and support bots inside your app</li>
+          <li>Agents and automations that call your APIs and tools</li>
+          <li>OpenAI, Claude and open-model integrations, MCP servers</li>
+          <li>Guardrails, evaluation, cost and latency control</li>
+        </ul>
+        <p class="good"><b>Good fit if:</b> you want AI in your product but need it secure, reliable and affordable at scale.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <section id="work">
   <div class="wrap">
-    <h2>Selected work</h2>
-    <p class="section-title">Products I have built and run</p>
-    <div class="cards">
+    <h2>Case studies</h2>
+    <p class="section-title">Problems I have solved</p>
+    <p class="section-sub">A selection from client work and my own projects. Most client code is private; I am happy to walk through details on a call.</p>
+    <div class="cases">
 
-      <article class="card">
-        <h3>Scivenia</h3>
-        <div class="kind">EdTech SaaS for scientific events · Lead Engineer</div>
-        <p>Platform for running large scientific events, workshops and webinars with registration, payments and live engagement.</p>
-        <ul>
-          <li>Lead engineer: architecture, feature planning and delivery</li>
-          <li>GraphQL APIs and real-time messaging with Socket.IO</li>
-          <li>AWS infrastructure and CI/CD (GitLab, ECS, EC2, S3, RDS)</li>
-        </ul>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">GraphQL</span><span class="tag">AWS</span></div>
+      <article class="card case">
+        <div class="top"><h3>Scivenia</h3><span class="kind">Backend · Cloud</span></div>
+        <dl>
+          <dt>Client</dt><dd>EdTech SaaS for scientific events, workshops and webinars</dd>
+          <dt>Need</dt><dd>One engineer to own the product: new modules, real-time features and the AWS platform</dd>
+          <dt>Built</dt><dd>Led architecture and delivery; GraphQL APIs, Socket.IO live engagement, payments; AWS ECS, RDS, S3 with GitLab CI/CD</dd>
+          <dt>Outcome</dt><dd>Platform runs large interactive events end to end, from registration to live sessions</dd>
+        </dl>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Next.js</span><span class="tag">GraphQL</span><span class="tag">AWS ECS</span></div>
         <div class="links"><a href="https://scivenia.com" target="_blank" rel="noopener">Live site</a></div>
       </article>
 
-      <article class="card">
-        <h3>Distributed Video Compilation</h3>
-        <div class="kind">Open source · System design</div>
-        <p>Queue-based pipeline that collects frames for a request and compiles video on any available worker, removing the single-server bottleneck.</p>
-        <ul>
-          <li>NestJS API, Python/FFmpeg workers, RabbitMQ, MinIO</li>
-          <li>Horizontal scaling, retries and fault-tolerant workers</li>
-        </ul>
-        <div class="tags"><span class="tag">NestJS</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">RabbitMQ</span><span class="tag">Docker</span></div>
+      <article class="card case">
+        <div class="top"><h3>Distributed video pipeline</h3><span class="kind">Backend · Cloud-native</span></div>
+        <dl>
+          <dt>Need</dt><dd>Video compilation was tied to one server, so a busy server blocked every request</dd>
+          <dt>Built</dt><dd>NestJS API takes frames, RabbitMQ distributes jobs, Python FFmpeg workers compile in parallel, MinIO stores output</dd>
+          <dt>Outcome</dt><dd>Any worker can pick up any job; add workers to add capacity, and a failed worker no longer stops processing</dd>
+        </dl>
+        <div class="tags"><span class="tag">NestJS</span><span class="tag">Python</span><span class="tag">RabbitMQ</span><span class="tag">Docker</span></div>
         <div class="links"><a href="https://github.com/Mudsr/video-compilation" target="_blank" rel="noopener">Code</a></div>
       </article>
 
-      <article class="card">
-        <h3>Multi-Agent Bot with LangGraph</h3>
-        <div class="kind">Open source · LLM agents</div>
-        <p>Experimental assistant where several LangGraph agents work on a request at the same time and hand results to each other.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LLM</span><span class="tag">Agents</span></div>
+      <article class="card case">
+        <div class="top"><h3>Proximus data sync</h3><span class="kind">Data · GCP</span></div>
+        <dl>
+          <dt>Client</dt><dd>Telecom operator's SIM activity reporting</dd>
+          <dt>Need</dt><dd>Move SIM card activity from telecom systems into cloud dashboards reliably</dd>
+          <dt>Built</dt><dd>Python transformation jobs and scheduled sync with replay on GCP, BigQuery and Bigtable, running on Kubernetes</dd>
+          <dt>Outcome</dt><dd>Reports fed automatically, with replay to recover from upstream gaps</dd>
+        </dl>
+        <div class="tags"><span class="tag">Python</span><span class="tag">BigQuery</span><span class="tag">Kubernetes</span></div>
+      </article>
+
+      <article class="card case">
+        <div class="top"><h3>Multi-agent assistant</h3><span class="kind">AI · Agents</span></div>
+        <dl>
+          <dt>Need</dt><dd>Explore how several specialised LLM agents can split and solve one request</dd>
+          <dt>Built</dt><dd>LangGraph graph where agents run in parallel and pass results to each other</dd>
+          <dt>Outcome</dt><dd>Working pattern I reuse for agent and automation features in client products</dd>
+        </dl>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LLM</span></div>
         <div class="links"><a href="https://github.com/Mudsr/testbot-with-langgraph" target="_blank" rel="noopener">Code</a></div>
       </article>
 
-      <article class="card">
-        <h3>Gem Monitor</h3>
-        <div class="kind">IoT telemetry platform · .NET service maintainer</div>
-        <p>Monitors industrial assets and vehicles: ingests telemetry, processes it and shows analytics and alerts on dashboards.</p>
-        <ul>
-          <li>Telemetry ingestion features in .NET Core</li>
-          <li>Fixed real-time processing bugs and database reliability issues</li>
-        </ul>
-        <div class="tags"><span class="tag">.NET Core</span><span class="tag">Vue.js</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span></div>
+      <article class="card case">
+        <div class="top"><h3>Gem Monitor</h3><span class="kind">IoT · Backend</span></div>
+        <dl>
+          <dt>Client</dt><dd>IoT platform monitoring industrial assets and vehicles</dd>
+          <dt>Need</dt><dd>Keep telemetry ingestion reliable and fix real-time processing bugs</dd>
+          <dt>Built</dt><dd>Maintained and extended the .NET Core ingestion service; fixed processing and database reliability issues</dd>
+          <dt>Outcome</dt><dd>Steadier data flow into the dashboards and alerts customers rely on</dd>
+        </dl>
+        <div class="tags"><span class="tag">.NET Core</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span></div>
       </article>
 
-      <article class="card">
-        <h3>Proximus Synchronizer</h3>
-        <div class="kind">Telecom data pipeline</div>
-        <p>Syncs SIM card activity from telecom systems into cloud dashboards and reports.</p>
-        <ul>
-          <li>Python migration and transformation jobs</li>
-          <li>Scheduled sync and replay on GCP and Kubernetes</li>
-        </ul>
-        <div class="tags"><span class="tag">Python</span><span class="tag">BigQuery</span><span class="tag">Bigtable</span><span class="tag">Kubernetes</span></div>
+      <article class="card case">
+        <div class="top"><h3>StageOne CMS</h3><span class="kind">SaaS · Cloud</span></div>
+        <dl>
+          <dt>Client</dt><dd>Swedish startup serving opera houses and artists</dd>
+          <dt>Need</dt><dd>A content platform for artists and venues, built from scratch</dd>
+          <dt>Built</dt><dd>Architected the platform; caching, queues and scheduled jobs; tuned APIs under load; AWS EC2, RDS, S3 with automated deploys</dd>
+          <dt>Outcome</dt><dd>Served 300+ artists</dd>
+        </dl>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">AWS</span></div>
       </article>
 
-      <article class="card">
-        <h3>Sarens ERP</h3>
-        <div class="kind">Enterprise ERP for heavy lifting and logistics</div>
-        <p>Manages resources, staff and operations for an international heavy lifting company.</p>
-        <ul>
-          <li>Built several business modules on .NET 8</li>
-          <li>Architecture, schema design and PostgreSQL tuning on Azure</li>
-        </ul>
-        <div class="tags"><span class="tag">.NET 8</span><span class="tag">Nuxt.js</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span></div>
-      </article>
-
-      <article class="card">
-        <h3>Adilo</h3>
-        <div class="kind">Video hosting SaaS</div>
-        <p>Video hosting, analytics and monetization for creators and businesses.</p>
-        <ul>
-          <li>Refactored the core codebase for scale and performance</li>
-          <li>Integrated Paddle and FastSpring billing and usage tracking</li>
-          <li>Debugged outages and tuned AWS infrastructure</li>
-        </ul>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">AWS</span></div>
+      <article class="card case">
+        <div class="top"><h3>Adilo</h3><span class="kind">SaaS · Payments</span></div>
+        <dl>
+          <dt>Client</dt><dd>US video hosting SaaS</dd>
+          <dt>Need</dt><dd>Scale the product, add billing and stop outages</dd>
+          <dt>Built</dt><dd>Refactored the core codebase, integrated Paddle and FastSpring billing with usage tracking, debugged outages, tuned AWS</dd>
+          <dt>Outcome</dt><dd>Platform serving 8,000+ users with metered billing</dd>
+        </dl>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">AWS</span></div>
         <div class="links"><a href="https://adilo.bigcommand.com" target="_blank" rel="noopener">Live site</a></div>
       </article>
 
-      <article class="card">
-        <h3>CoolerAds</h3>
-        <div class="kind">White-label multi-tenant AdTech</div>
-        <p>Ad campaign platform used by US local newspapers to sell and distribute digital ads.</p>
-        <ul>
-          <li>Led the multi-tenant, white-label architecture</li>
-          <li>Campaign scheduling, Twilio messaging, social posting</li>
-        </ul>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Livewire</span><span class="tag">MySQL</span></div>
+      <article class="card case">
+        <div class="top"><h3>CoolerAds</h3><span class="kind">Multi-tenant SaaS</span></div>
+        <dl>
+          <dt>Client</dt><dd>Ad platform for US local newspapers</dd>
+          <dt>Need</dt><dd>One white-label product that each newspaper runs under its own brand</dd>
+          <dt>Built</dt><dd>Led the multi-tenant architecture, campaign scheduling, Twilio messaging and social posting</dd>
+          <dt>Outcome</dt><dd>Newspapers sell and run digital ad campaigns on their own branded portals</dd>
+        </dl>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span></div>
         <div class="links"><a href="https://mypaperonline.coolerads.com" target="_blank" rel="noopener">Demo</a></div>
       </article>
 
-      <article class="card">
-        <h3>Tattoo Admin</h3>
-        <div class="kind">Booking and payments SaaS</div>
-        <p>Bookings, availability and payments for tattoo artists with real-time calendar sync.</p>
-        <ul>
-          <li>Set up the project architecture and core modules</li>
-          <li>Stripe payments; deployments on DigitalOcean with Docker</li>
-        </ul>
-        <div class="tags"><span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Stripe</span></div>
-      </article>
+    </div>
+  </div>
+</section>
 
+<section id="process">
+  <div class="wrap">
+    <h2>How I work</h2>
+    <p class="section-title">Clear scope, steady progress, clean handover</p>
+    <p class="section-sub">No black boxes. You see working software every week and keep everything at the end.</p>
+    <div class="steps">
+      <div class="card step"><h3>Discovery call</h3><p>We go through what you are building, what exists and where it hurts. You get my honest take, even if it is "you do not need me".</p></div>
+      <div class="card step"><h3>Plan and estimate</h3><p>A written scope with milestones, architecture and a fixed price or hourly estimate before any work starts.</p></div>
+      <div class="card step"><h3>Build in milestones</h3><p>Weekly demos on a staging environment, pull requests you can review, and quick answers in your time zone overlap.</p></div>
+      <div class="card step"><h3>Handover</h3><p>Code, Terraform, CI/CD and docs in your accounts. Your team can run it without me, and I stay available for support.</p></div>
     </div>
   </div>
 </section>
 
 <section id="experience">
   <div class="wrap">
-    <h2>Experience</h2>
-    <p class="section-title">Where I have worked</p>
-    <div class="timeline">
-
-      <div class="job">
-        <div><div class="when">Apr 2023 to present</div><div class="where">Remote</div></div>
-        <div>
-          <h3>Senior Software Engineer</h3>
-          <div class="co">TechVenia</div>
-          <ul>
-            <li>Lead engineer on Scivenia; architecture, delivery and AWS infrastructure</li>
-            <li>Backend and platform work for European clients: IoT telemetry (.NET), telecom data pipelines (GCP), ERP (.NET 8, Azure)</li>
-            <li>Infrastructure as code with Terraform, CI/CD and cloud security work on AWS and GCP</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div><div class="when">Nov 2022 to Mar 2023</div><div class="where">Remote, Belgium</div></div>
-        <div>
-          <h3>Full-Stack Engineer</h3>
-          <div class="co">Knops Media</div>
-          <ul>
-            <li>Built a Shopify app (Alzura) in React and Polaris with the Shopify API backend</li>
-            <li>Architected and developed modules for the Elga Energy CRM</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div><div class="when">Feb 2022 to Oct 2022</div><div class="where">Remote, Sweden</div></div>
-        <div>
-          <h3>Full-Stack Engineer</h3>
-          <div class="co">StageOne AB</div>
-          <ul>
-            <li>Built a semi-CMS SaaS serving 300+ artists, from content model to public site</li>
-            <li>Caching, queues and job scheduling; optimised APIs under sustained load</li>
-            <li>Managed AWS (EC2, RDS, S3) with automated deployments</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div><div class="when">Sep 2021 to Feb 2022</div><div class="where">Remote, US</div></div>
-        <div>
-          <h3>Software Engineer</h3>
-          <div class="co">Adilo</div>
-          <ul>
-            <li>Built and scaled features on a video hosting SaaS with 8,000+ users</li>
-            <li>Payment processing and usage tracking integrations</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job">
-        <div><div class="when">Apr 2020 to Jul 2021</div><div class="where">Lahore, Pakistan</div></div>
-        <div>
-          <h3>Software Engineer</h3>
-          <div class="co">Larasoft</div>
-          <ul>
-            <li>Led full-cycle development of CoolerAds, a multi-tenant ad campaign SaaS</li>
-            <li>Dashboards and third-party API integrations</li>
-          </ul>
-        </div>
-      </div>
-
+    <h2>Track record</h2>
+    <p class="section-title">Teams I have built with</p>
+    <p class="section-sub">Product companies and agencies across the US and Europe.</p>
+    <div class="track">
+      <div class="co-card"><b>TechVenia</b><span>Senior Software Engineer</span><span>2023 to now</span></div>
+      <div class="co-card"><b>Knops Media</b><span>Full-Stack Engineer · Belgium</span><span>2022 to 2023</span></div>
+      <div class="co-card"><b>StageOne AB</b><span>Full-Stack Engineer · Sweden</span><span>2022</span></div>
+      <div class="co-card"><b>Adilo</b><span>Software Engineer · US</span><span>2021 to 2022</span></div>
+      <div class="co-card"><b>Larasoft</b><span>Software Engineer</span><span>2020 to 2021</span></div>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="stack">
   <div class="wrap">
-    <h2>Skills</h2>
-    <p class="section-title">What I work with</p>
-    <div class="skills">
-      <div class="card skill"><h3>Backend</h3><div class="tags"><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">TypeScript</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Laravel</span><span class="tag">.NET Core</span><span class="tag">GraphQL</span><span class="tag">REST</span></div></div>
-      <div class="card skill"><h3>AI and LLM</h3><div class="tags"><span class="tag">OpenAI API</span><span class="tag">RAG</span><span class="tag">LangGraph</span><span class="tag">Agents</span><span class="tag">Tool calling</span><span class="tag">MCP</span><span class="tag">Embeddings</span></div></div>
-      <div class="card skill"><h3>Cloud and DevOps</h3><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span></div></div>
-      <div class="card skill"><h3>Frontend</h3><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Vue.js</span><span class="tag">Nuxt.js</span><span class="tag">Tailwind CSS</span><span class="tag">React Native</span></div></div>
-      <div class="card skill"><h3>Data</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">BigQuery</span><span class="tag">RabbitMQ</span></div></div>
-      <div class="card skill"><h3>Architecture</h3><div class="tags"><span class="tag">Microservices</span><span class="tag">Multi-tenant SaaS</span><span class="tag">Event-driven</span><span class="tag">Queues</span><span class="tag">Data pipelines</span></div></div>
+    <h2>Stack</h2>
+    <p class="section-title">Tools I ship with</p>
+    <div class="stack" style="margin-top:24px">
+      <div class="card"><h3>Backend</h3><div class="tags"><span class="tag">TypeScript</span><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Laravel</span><span class="tag">.NET</span><span class="tag">GraphQL</span></div></div>
+      <div class="card"><h3>Cloud and DevOps</h3><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span></div></div>
+      <div class="card"><h3>AI and data</h3><div class="tags"><span class="tag">OpenAI</span><span class="tag">Claude</span><span class="tag">RAG</span><span class="tag">LangGraph</span><span class="tag">MCP</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">BigQuery</span><span class="tag">RabbitMQ</span></div></div>
     </div>
   </div>
 </section>
@@ -383,11 +411,16 @@
   <div class="wrap">
     <div class="contact">
       <div>
-        <h3>Have something to build?</h3>
-        <p>Tell me what you are building, what you already have and where you are stuck. I will reply with how I would approach it.</p>
+        <h3>Tell me about your project</h3>
+        <p>Send a few lines and I will reply within one business day with how I would approach it and whether I am the right fit.</p>
+        <ol>
+          <li>What you are building</li>
+          <li>What you already have</li>
+          <li>Where you are stuck, and your timeline</li>
+        </ol>
       </div>
       <div class="cta" style="margin-top:0">
-        <a class="btn primary" href="mailto:mudsr3@gmail.com">Email me</a>
+        <a class="btn primary" href="mailto:mudsr3@gmail.com?subject=Project%20inquiry">Email me</a>
         <a class="btn" href="https://www.linkedin.com/in/mudsr-ali" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/Mudsr" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -395,7 +428,7 @@
   </div>
 </section>
 
-<footer>&copy; <span id="y"></span> Mudassar Ali</footer>
+<footer>&copy; <span id="y"></span> Mudassar Ali · Lahore, Pakistan · Working remotely worldwide</footer>
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
