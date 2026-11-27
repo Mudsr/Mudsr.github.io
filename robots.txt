@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mudsr.github.io/sitemap.xml
