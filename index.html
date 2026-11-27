@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mudassar Ali | Senior Full-Stack and AI Engineer</title>
+<meta name="description" content="Mudassar Ali, senior full-stack and AI engineer. TypeScript, Node.js/NestJS, Next.js, Python/FastAPI, LLM and RAG systems, AWS, GCP and Terraform.">
+<meta property="og:title" content="Mudassar Ali | Senior Full-Stack and AI Engineer">
+<meta property="og:description" content="Backends, cloud platforms and LLM features that hold up in production.">
+<meta property="og:image" content="avatar.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f766e'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>MA</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --text: #0f172a;
+    --muted: #526077;
+    --line: #e3e7ee;
+    --accent: #0f766e;
+    --accent-soft: #e6f4f2;
+    --chip: #f1f4f8;
+    --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 8px 24px rgba(15, 23, 42, .06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1120;
+      --surface: #111a2e;
+      --text: #e7ecf5;
+      --muted: #9aa8bf;
+      --line: #1f2b44;
+      --accent: #2dd4bf;
+      --accent-soft: #0f2f33;
+      --chip: #17223a;
+      --shadow: none;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: Inter, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .brand { font-weight: 700; color: var(--text); letter-spacing: -.01em; }
+  nav ul { display: flex; gap: 22px; list-style: none; font-size: 14px; font-weight: 500; }
+  nav ul a { color: var(--muted); }
+  nav ul a:hover { color: var(--text); text-decoration: none; }
+
+  header.hero { padding: 72px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; color: var(--accent);
+    background: var(--accent-soft); padding: 6px 12px; border-radius: 999px; margin-bottom: 20px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; letter-spacing: -.03em; font-weight: 800; }
+  h1 span { color: var(--accent); }
+  .lead { font-size: 18px; color: var(--muted); max-width: 600px; margin-top: 18px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .btn {
+    display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: 600; font-size: 15px;
+    border: 1px solid var(--line); color: var(--text); background: var(--surface);
+  }
+  .btn:hover { text-decoration: none; border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #062a27; } }
+  .avatar {
+    width: 240px; height: 240px; border-radius: 24px; object-fit: cover;
+    border: 1px solid var(--line); box-shadow: var(--shadow);
+  }
+  .stats { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 40px; }
+  .stat b { display: block; font-size: 26px; letter-spacing: -.02em; }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--accent); margin-bottom: 8px; }
+  .section-title { font-size: 28px; font-weight: 700; letter-spacing: -.02em; margin-bottom: 28px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  }
+  .card h3 { font-size: 18px; letter-spacing: -.01em; }
+  .card .kind { font-size: 13px; color: var(--muted); margin: 2px 0 10px; }
+  .card p { font-size: 15px; color: var(--muted); }
+  .card ul { margin: 10px 0 0 18px; font-size: 14.5px; color: var(--muted); }
+  .card ul li { margin-bottom: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .tag {
+    font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px;
+    background: var(--chip); color: var(--text); padding: 3px 8px; border-radius: 6px;
+  }
+  .card .links { margin-top: auto; padding-top: 14px; font-size: 14px; font-weight: 600; display: flex; gap: 16px; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; }
+  .skill h3 { font-size: 15px; margin-bottom: 10px; }
+
+  .timeline { display: grid; gap: 14px; }
+  .job {
+    display: grid; grid-template-columns: 190px 1fr; gap: 24px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; box-shadow: var(--shadow);
+  }
+  .job .when { font-size: 14px; color: var(--muted); }
+  .job .where { font-size: 13px; color: var(--muted); }
+  .job h3 { font-size: 17px; }
+  .job .co { color: var(--accent); font-weight: 600; font-size: 15px; }
+  .job ul { margin: 10px 0 0 18px; color: var(--muted); font-size: 15px; }
+  .job ul li { margin-bottom: 4px; }
+
+  .contact {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 36px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; box-shadow: var(--shadow);
+  }
+  .contact h3 { font-size: 24px; letter-spacing: -.02em; }
+  .contact p { color: var(--muted); margin-top: 6px; max-width: 520px; }
+
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; text-align: center; }
+
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+    header.hero { padding: 40px 0 32px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+    .avatar { width: 140px; height: 140px; border-radius: 18px; order: -1; }
+    .job { grid-template-columns: 1fr; gap: 6px; }
+    .contact { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Mudassar Ali</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Open to remote roles and contracts</div>
+      <h1>Senior Full-Stack and <span>AI Engineer</span></h1>
+      <p class="lead">I build backends, cloud platforms and LLM features that hold up in production. TypeScript and Node.js/NestJS, Next.js, Python/FastAPI, RAG and agents, on AWS and GCP with Terraform.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn" href="#work">See my work</a>
+        <a class="btn" href="https://github.com/Mudsr" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>6+ years</b><span>shipping production software</span></div>
+        <div class="stat"><b>10+</b><span>SaaS, ERP, IoT and AI products</span></div>
+        <div class="stat"><b>Lahore, PK</b><span>remote, flexible overlap with EU and US</span></div>
+      </div>
+    </div>
+    <img class="avatar" src="avatar.jpg" alt="Mudassar Ali" width="240" height="240">
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="section-title">Products I have built and run</p>
+    <div class="cards">
+
+      <article class="card">
+        <h3>Scivenia</h3>
+        <div class="kind">EdTech SaaS for scientific events · Lead Engineer</div>
+        <p>Platform for running large scientific events, workshops and webinars with registration, payments and live engagement.</p>
+        <ul>
+          <li>Lead engineer: architecture, feature planning and delivery</li>
+          <li>GraphQL APIs and real-time messaging with Socket.IO</li>
+          <li>AWS infrastructure and CI/CD (GitLab, ECS, EC2, S3, RDS)</li>
+        </ul>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">GraphQL</span><span class="tag">AWS</span></div>
+        <div class="links"><a href="https://scivenia.com" target="_blank" rel="noopener">Live site</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Distributed Video Compilation</h3>
+        <div class="kind">Open source · System design</div>
+        <p>Queue-based pipeline that collects frames for a request and compiles video on any available worker, removing the single-server bottleneck.</p>
+        <ul>
+          <li>NestJS API, Python/FFmpeg workers, RabbitMQ, MinIO</li>
+          <li>Horizontal scaling, retries and fault-tolerant workers</li>
+        </ul>
+        <div class="tags"><span class="tag">NestJS</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">RabbitMQ</span><span class="tag">Docker</span></div>
+        <div class="links"><a href="https://github.com/Mudsr/video-compilation" target="_blank" rel="noopener">Code</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Multi-Agent Bot with LangGraph</h3>
+        <div class="kind">Open source · LLM agents</div>
+        <p>Experimental assistant where several LangGraph agents work on a request at the same time and hand results to each other.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LLM</span><span class="tag">Agents</span></div>
+        <div class="links"><a href="https://github.com/Mudsr/testbot-with-langgraph" target="_blank" rel="noopener">Code</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Gem Monitor</h3>
+        <div class="kind">IoT telemetry platform · .NET service maintainer</div>
+        <p>Monitors industrial assets and vehicles: ingests telemetry, processes it and shows analytics and alerts on dashboards.</p>
+        <ul>
+          <li>Telemetry ingestion features in .NET Core</li>
+          <li>Fixed real-time processing bugs and database reliability issues</li>
+        </ul>
+        <div class="tags"><span class="tag">.NET Core</span><span class="tag">Vue.js</span><span class="tag">PostgreSQL</span><span class="tag">AWS</span></div>
+      </article>
+
+      <article class="card">
+        <h3>Proximus Synchronizer</h3>
+        <div class="kind">Telecom data pipeline</div>
+        <p>Syncs SIM card activity from telecom systems into cloud dashboards and reports.</p>
+        <ul>
+          <li>Python migration and transformation jobs</li>
+          <li>Scheduled sync and replay on GCP and Kubernetes</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">BigQuery</span><span class="tag">Bigtable</span><span class="tag">Kubernetes</span></div>
+      </article>
+
+      <article class="card">
+        <h3>Sarens ERP</h3>
+        <div class="kind">Enterprise ERP for heavy lifting and logistics</div>
+        <p>Manages resources, staff and operations for an international heavy lifting company.</p>
+        <ul>
+          <li>Built several business modules on .NET 8</li>
+          <li>Architecture, schema design and PostgreSQL tuning on Azure</li>
+        </ul>
+        <div class="tags"><span class="tag">.NET 8</span><span class="tag">Nuxt.js</span><span class="tag">PostgreSQL</span><span class="tag">Azure</span></div>
+      </article>
+
+      <article class="card">
+        <h3>Adilo</h3>
+        <div class="kind">Video hosting SaaS</div>
+        <p>Video hosting, analytics and monetization for creators and businesses.</p>
+        <ul>
+          <li>Refactored the core codebase for scale and performance</li>
+          <li>Integrated Paddle and FastSpring billing and usage tracking</li>
+          <li>Debugged outages and tuned AWS infrastructure</li>
+        </ul>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">MySQL</span><span class="tag">AWS</span></div>
+        <div class="links"><a href="https://adilo.bigcommand.com" target="_blank" rel="noopener">Live site</a></div>
+      </article>
+
+      <article class="card">
+        <h3>CoolerAds</h3>
+        <div class="kind">White-label multi-tenant AdTech</div>
+        <p>Ad campaign platform used by US local newspapers to sell and distribute digital ads.</p>
+        <ul>
+          <li>Led the multi-tenant, white-label architecture</li>
+          <li>Campaign scheduling, Twilio messaging, social posting</li>
+        </ul>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">Livewire</span><span class="tag">MySQL</span></div>
+        <div class="links"><a href="https://mypaperonline.coolerads.com" target="_blank" rel="noopener">Demo</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Tattoo Admin</h3>
+        <div class="kind">Booking and payments SaaS</div>
+        <p>Bookings, availability and payments for tattoo artists with real-time calendar sync.</p>
+        <ul>
+          <li>Set up the project architecture and core modules</li>
+          <li>Stripe payments; deployments on DigitalOcean with Docker</li>
+        </ul>
+        <div class="tags"><span class="tag">NestJS</span><span class="tag">Next.js</span><span class="tag">PostgreSQL</span><span class="tag">Stripe</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <p class="section-title">Where I have worked</p>
+    <div class="timeline">
+
+      <div class="job">
+        <div><div class="when">Apr 2023 to present</div><div class="where">Remote</div></div>
+        <div>
+          <h3>Senior Software Engineer</h3>
+          <div class="co">TechVenia</div>
+          <ul>
+            <li>Lead engineer on Scivenia; architecture, delivery and AWS infrastructure</li>
+            <li>Backend and platform work for European clients: IoT telemetry (.NET), telecom data pipelines (GCP), ERP (.NET 8, Azure)</li>
+            <li>Infrastructure as code with Terraform, CI/CD and cloud security work on AWS and GCP</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Nov 2022 to Mar 2023</div><div class="where">Remote, Belgium</div></div>
+        <div>
+          <h3>Full-Stack Engineer</h3>
+          <div class="co">Knops Media</div>
+          <ul>
+            <li>Built a Shopify app (Alzura) in React and Polaris with the Shopify API backend</li>
+            <li>Architected and developed modules for the Elga Energy CRM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Feb 2022 to Oct 2022</div><div class="where">Remote, Sweden</div></div>
+        <div>
+          <h3>Full-Stack Engineer</h3>
+          <div class="co">StageOne AB</div>
+          <ul>
+            <li>Built a semi-CMS SaaS serving 300+ artists, from content model to public site</li>
+            <li>Caching, queues and job scheduling; optimised APIs under sustained load</li>
+            <li>Managed AWS (EC2, RDS, S3) with automated deployments</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Sep 2021 to Feb 2022</div><div class="where">Remote, US</div></div>
+        <div>
+          <h3>Software Engineer</h3>
+          <div class="co">Adilo</div>
+          <ul>
+            <li>Built and scaled features on a video hosting SaaS with 8,000+ users</li>
+            <li>Payment processing and usage tracking integrations</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div><div class="when">Apr 2020 to Jul 2021</div><div class="where">Lahore, Pakistan</div></div>
+        <div>
+          <h3>Software Engineer</h3>
+          <div class="co">Larasoft</div>
+          <ul>
+            <li>Led full-cycle development of CoolerAds, a multi-tenant ad campaign SaaS</li>
+            <li>Dashboards and third-party API integrations</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="section-title">What I work with</p>
+    <div class="skills">
+      <div class="card skill"><h3>Backend</h3><div class="tags"><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">TypeScript</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Laravel</span><span class="tag">.NET Core</span><span class="tag">GraphQL</span><span class="tag">REST</span></div></div>
+      <div class="card skill"><h3>AI and LLM</h3><div class="tags"><span class="tag">OpenAI API</span><span class="tag">RAG</span><span class="tag">LangGraph</span><span class="tag">Agents</span><span class="tag">Tool calling</span><span class="tag">MCP</span><span class="tag">Embeddings</span></div></div>
+      <div class="card skill"><h3>Cloud and DevOps</h3><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">GitHub Actions</span><span class="tag">GitLab CI</span></div></div>
+      <div class="card skill"><h3>Frontend</h3><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Vue.js</span><span class="tag">Nuxt.js</span><span class="tag">Tailwind CSS</span><span class="tag">React Native</span></div></div>
+      <div class="card skill"><h3>Data</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">BigQuery</span><span class="tag">RabbitMQ</span></div></div>
+      <div class="card skill"><h3>Architecture</h3><div class="tags"><span class="tag">Microservices</span><span class="tag">Multi-tenant SaaS</span><span class="tag">Event-driven</span><span class="tag">Queues</span><span class="tag">Data pipelines</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <h3>Have something to build?</h3>
+        <p>Tell me what you are building, what you already have and where you are stuck. I will reply with how I would approach it.</p>
+      </div>
+      <div class="cta" style="margin-top:0">
+        <a class="btn primary" href="mailto:mudsr3@gmail.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/mudsr-ali" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/Mudsr" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; <span id="y"></span> Mudassar Ali</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
